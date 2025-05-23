@@ -1,4 +1,4 @@
-name: Scrape NonReg
+name: Scrape Marketplace
 on:
   schedule:
     # At 3:30 PM Jakarta Time (08:45 UTC)
