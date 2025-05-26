@@ -96,6 +96,7 @@ jobs:
         FB_USER: ${{ secrets.FB_USER }}
         FB_PASS: ${{ secrets.FB_PASS }}
         OTP_SECRET: ${{ secrets.OTP_SECRET }}
+        CAPTCHA_KEY: ${{ secrets.CAPTCHA_KEY }}
         SA_PRIVKEY_ID: ${{ secrets.SA_PRIVKEY_ID }}
         SA_PRIVKEY: ${{ secrets.SA_PRIVKEY }}
         SA_CLIENTMAIL: ${{ secrets.SA_CLIENTMAIL }}
