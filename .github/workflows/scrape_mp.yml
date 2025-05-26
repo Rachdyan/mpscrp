@@ -1,6 +1,6 @@
 name: Scrape Marketplace
 on:
-  schedule:
+  # schedule:
     # At 3:30 PM Jakarta Time (08:45 UTC)
     # - cron: '30 6 * * *'
   workflow_dispatch:

@@ -8,6 +8,7 @@ import os
 from gspread_dataframe import get_as_dataframe
 import asyncio
 import pyotp
+from twocaptcha import TwoCaptcha
 
 from utils.fb import search_marketplace
 from utils.gsheet_utils import export_to_sheets
@@ -158,12 +159,28 @@ if __name__ == "__main__":
         current_url = sb.driver.current_url
         # current_url
 
-        if "two_step_verification" in current_url and\
-           "authentication" in current_url:
+        if "two_step_verification" in current_url \
+           and "authentication" in current_url:
             print("Need to input text captcha")
             sb.save_screenshot("captcha.png", selector="img")
 
-            # ADD captcha API
+            captcha_api_key = os.environ['CAPTCHA_KEY']
+            solver = TwoCaptcha(captcha_api_key)
+            print("Reading the Captcha...")
+            try:
+                result = solver.normal('captcha.png')
+            except Exception as e:
+                print("Error reading captcha", e)
+                exit(e)
+
+            else:
+                print('Captcha: ' + result['code'])
+
+            sb.type('input[type="text"]', result['code'])
+            sb.sleep(2)
+
+            sb.click('(//div[@role="button"])[2]')
+            sb.sleep(10)
 
         current_url = sb.driver.current_url
 

@@ -12,3 +12,4 @@ python_dateutil==2.8.2
 selenium
 seleniumbase
 pyotp
+2captcha-python
