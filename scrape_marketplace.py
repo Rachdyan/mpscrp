@@ -115,7 +115,7 @@ sony_wf1000xm5 = {'name': "sony wf1000xm5",
 
 garmin_forerunner = {'name': "garmin forerunner",
                      'min_price': 500000,
-                     'max_price': 2000000,
+                     'max_price': 1700000,
                      'keyword_filter': False}
 
 kindle_11 = {'name': "kindle 11",
@@ -123,10 +123,14 @@ kindle_11 = {'name': "kindle 11",
              'max_price': 1800000,
              'keyword_filter': False}
 
+size_44 = {'name': 'size "44"',
+           'min_price': 500000,
+           'max_price': 2000000,
+           'keyword_filter': False}
 
 all_product_list = [griii_dict, a6400_dict,
                     macbook_pro_m3_dict, sony_wf1000xm5,
-                    garmin_forerunner, kindle_11
+                    garmin_forerunner, kindle_11, size_44
                     ]
 
 if __name__ == "__main__":
